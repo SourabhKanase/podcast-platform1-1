@@ -6,12 +6,14 @@ let PrivateRoutes=()=>{
     let [user,loading,error]=useAuthState(auth);
 
 if (loading) {
-    console.log("loading has run");
+    console.log("loading in private riutes has run");
     return <p>Loading...</p>;
 } else if (!user || error) {
+    console.log("user not found in private routes");
     return <Navigate to="/" replace />;
 } else {
-    return <Outlet />;
+    console.log("user found so redirecting to required pages");
+    return <Outlet/>;
 }
 }
 export default PrivateRoutes;

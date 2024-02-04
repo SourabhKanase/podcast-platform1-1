@@ -5,16 +5,20 @@ import { QuerySnapshot, collection, doc, getDoc, onSnapshot, query } from "fireb
 import { auth, db } from "../firebase";
 import { toast } from "react-toastify";
 import EpisodeDetails from "../components/EpisodeDetails";
+import AudioPlayer from "../components/AudioPlayer";
 
 const PodcastdetailPage = () => {
   let [requiredpodcastdeatils, setRequiredpodcastdetails] = useState();
   let [episodes,setEpisodes]=useState([]);
-  
+  let [playepisode,setPlayepisod]=useState();
+
   console.log(episodes);
 
   console.log(requiredpodcastdeatils);
+
   let { id } = useParams();
   let navigate = useNavigate();
+
   useEffect(() => {
     if (id) {
       getdata();
@@ -22,10 +26,9 @@ const PodcastdetailPage = () => {
   }, [id]);
 
   async function getdata() {
-    const podcastRef = doc(db, "podcasts", id);
-
+    // const podcastRef = doc(db, "podcasts", id);
     try {
-      const podcastDoc = await getDoc(podcastRef);
+      const podcastDoc = await getDoc(doc(db, "podcasts", id));
       if (podcastDoc.exists()) {
         // The document exists, and you can access its data using podcastDoc.data()
         const podcastData = podcastDoc.data();
@@ -65,7 +68,7 @@ const PodcastdetailPage = () => {
   
 
   return (
-    <div>
+    <div style={{marginBottom:"100px"}}>
       <Header />
       <div style={{ textAlign: "center" }}>
         <h1 style={{ color: "white" }}>PodCastDeatils</h1>
@@ -83,12 +86,13 @@ const PodcastdetailPage = () => {
             {episodes.length>0?
             (
               <ol><li>{episodes.map((data)=>{
-                   return <EpisodeDetails title={data.title} description={data.description} audiofile={data.audioUrl}/>
+                   return <EpisodeDetails title={data.title} description={data.description} audiofile={data.audioUrl} setPlayepisod={setPlayepisod}/>
               })}
               </li>
               </ol>
             )
             :<p>NO EPISODES</p>}
+             { playepisode && <AudioPlayer audiosrc={playepisode} image={requiredpodcastdeatils.displayImage}/>}
           </div>
         )}
       </div>

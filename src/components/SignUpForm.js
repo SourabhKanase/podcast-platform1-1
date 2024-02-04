@@ -36,7 +36,6 @@ export const SignUpForm = () => {
                 //creating user in firebase with email and password 
                  const userCredential=await createUserWithEmailAndPassword(auth,email,password);
                  const user=userCredential.user;
-                 console.log(user);
                  //Storing and creating document in firebase storage
                  await setDoc(doc(db,"users",user.uid),{name:name,email:email,uid:user.uid});
                    
@@ -57,7 +56,7 @@ export const SignUpForm = () => {
             setLoading(false);
             if(password!=confirmpassword)
             {
-                toast.error("password is wrong");
+                toast.error("Invaild Password");
             }else{
                 toast.error("Envalid details");
             }

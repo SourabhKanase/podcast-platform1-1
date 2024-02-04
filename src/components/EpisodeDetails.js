@@ -1,10 +1,12 @@
 import React from 'react'
 
-const EpisodeDetails = ({title,description,audiofile,onClick}) => {
+const EpisodeDetails = ({title,description,audiofile,onClick,setPlayepisod}) => {
 
   function handlePlay()
   {
     console.log("hii");
+    console.log(audiofile);
+    setPlayepisod(audiofile);
   }
   return (
     <div>
@@ -15,4 +17,4 @@ const EpisodeDetails = ({title,description,audiofile,onClick}) => {
   )
 }
 
-export default EpisodeDetails
+export default EpisodeDetails;

@@ -207,3 +207,31 @@ a{
 ol{
   color:white
 }
+.Custom-audio-palyer{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 0.4rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  gap:1.5rem
+}
+.custom-display-image{
+  width:50px;
+  height: 50px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.durationflex{
+  display: flex;
+  align-items: center;
+  gap:0.5rem;
+  width:40%;
+}
+.inputRange{
+  width: 100%;
+}

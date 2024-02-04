@@ -26,27 +26,29 @@ function LoginFrom() {
         if(email && password)
         {
           try{
-            //creating user in firebase with email and password 
-             const userCredential=await signInWithEmailAndPassword(auth,email,password);
-             const user=userCredential.user;
-             console.log(user);
-             //Storing and creating document in firebase storage
-             let userdoc=await getDoc(doc(db,"users",user.uid));
-            let  userdata=userdoc.data();
-              
-             //store in redux
-             dispatch(setUser({
-                name:userdata.name,
-                email:email,
-                uid:user.uid,
-             }));
-             toast.success("user login Successfull");
-             setLoading(false);
-             navigate("./profile");
-         }catch(e){
-             toast.error(e.message);
-             setLoading(false);
-         }
+              //creating user in firebase with email and password 
+              const userCredential=await signInWithEmailAndPassword(auth,email,password);
+              const user=userCredential.user;
+
+              //Storing and creating document in firebase storage
+                let userdoc=await getDoc(doc(db,"users",user.uid));
+                let  userdata=userdoc.data();
+                
+              //store in redux
+                dispatch(setUser({
+                    name:userdata.name,
+                    email:email,
+                    uid:user.uid,
+                }));
+
+                toast.success("user login Successfull");
+                setLoading(false);
+                navigate("./profile");
+                
+              }catch(e){
+                  toast.error(e.message);
+                  setLoading(false);
+              }
         }else{
           toast.error("Enter Email And Password");
           setLoading(false);

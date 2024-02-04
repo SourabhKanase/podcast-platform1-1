@@ -5,18 +5,20 @@ import {collection,onSnapshot,query} from "firebase/firestore";
 import {db} from "../firebase";
 import Podcastcard from './Podcastcard';
 const Podcasts = () => {
-  let podcast=useSelector((state)=>state.podcast);
+  
+  const podcast=useSelector((state)=>state.podcast);
+  const dispatch=useDispatch();
+
   let [search,setsearch]=useState("");
 
-  const dispatch=useDispatch();
-  
-  
   useEffect(()=>{
     const unsubscribe=onSnapshot(
      query(collection(db,"podcasts")),
      (arr)=>{
+      // console.log("array for podcasts",arr);
         const podcastsData=[];
         arr.forEach((doc)=>{
+            // console.log("data from array",doc.data());
             podcastsData.push({id:doc.id,...doc.data()});
         });
         dispatch(setPodcasts(podcastsData));
@@ -29,12 +31,12 @@ const Podcasts = () => {
         unsubscribe();
     }
   },[dispatch]);
-  console.log(podcast);
-  let filteredpodcasts = podcast.filter((item) => item.title.trim().toLowerCase().includes(search.trim().toLowerCase()));
 
+  let filteredpodcasts = podcast.filter((item) => item.title.trim().toLowerCase().includes(search.trim().toLowerCase()));
+  console.log(filteredpodcasts);
   return (
     <div className='forinput'>
-         <input type='text' placeholder='search a podcast' onChange={(e)=>setsearch(e.target.value)}/>
+        <input type='text' placeholder='search a podcast' onChange={(e)=>setsearch(e.target.value)}/>
         <div className='Poadcastdiv'>
         
         {filteredpodcasts.length>0?

@@ -32,7 +32,7 @@ const StartAPodcastfrom = () => {
               await uploadBytes(DisplayImageref,DisplayImage);
               const DisplayImageUrl=await getDownloadURL(DisplayImageref);
 
-              let docref=await addDoc(collection(db,"podcasts"),{title:Title,discription:disc,bannerImage:bannerImageUrl,displayImage:DisplayImageUrl,createBy:auth.currentUser.uid});
+              await addDoc(collection(db,"podcasts"),{title:Title,discription:disc,bannerImage:bannerImageUrl,displayImage:DisplayImageUrl,createBy:auth.currentUser.uid});
               toast.success("poadcast creacted");
 
               setTittle("");

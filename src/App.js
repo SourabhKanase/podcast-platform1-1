@@ -20,7 +20,9 @@ import CreateAnEpisode from "./pages/CreateAnEpisode";
 function App() {
 
   let dispatch=useDispatch();
-  let user=useSelector((data)=>data)
+  let user=useSelector((data)=>data);
+
+
   useEffect(()=>{
       const unsubscribeAuth= onAuthStateChanged(auth,(user)=>{
         if(user)
@@ -37,9 +39,7 @@ function App() {
                       name:userData.name,
                       email:userData.email,
                       uid:user.uid,
-                    }
-                  )
-
+                    })
                 );
               }
             },
@@ -57,6 +57,8 @@ function App() {
         unsubscribeAuth();
       };
   },[])
+
+  
   return (
     <div className="App">
         <Routes>
