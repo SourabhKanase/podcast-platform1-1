@@ -78,7 +78,7 @@ const PodcastdetailPage = () => {
           <div className="podcastdetail">
             <div className="createepisodebuttondiv" style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
                <h1>{requiredpodcastdeatils.title}</h1>
-               {requiredpodcastdeatils.createBy===auth.currentUser.uid && <button style={{width:"150px",padding:"10px"}} onClick={()=>{navigate(`/podcast/${id}/episodes`)}}>Create Episode</button>}
+               {requiredpodcastdeatils.createBy===auth.currentUser.uid && <button className="createpodcast" style={{width:"150px",padding:"10px"}} onClick={()=>{navigate(`/podcast/${id}/episodes`)}}>Create Episode</button>}
             </div>
             <img className="bannerImage" src={requiredpodcastdeatils.bannerImage} />
             <p>{requiredpodcastdeatils.discription}</p>

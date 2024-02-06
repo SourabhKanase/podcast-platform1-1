@@ -12,7 +12,7 @@ const EpisodeDetails = ({title,description,audiofile,onClick,setPlayepisod}) => 
     <div>
        <h1>{title}</h1>
        <p>{description}</p>
-       <button onClick={handlePlay}>Play</button>
+       <button className='playbutton' onClick={handlePlay}>Play</button>
     </div>
   )
 }

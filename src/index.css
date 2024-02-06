@@ -235,3 +235,27 @@ ol{
 .inputRange{
   width: 100%;
 }
+.createpodcast,.playbutton{
+  /* background-color: #18b2de;
+  filter: blur(100px); */
+  background: linear-gradient(178deg, rgba(58, 129, 191, 0.30) 1.63%, rgba(65, 48, 90, 0.01) 148.18%);
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  opacity: 0.7;
+  transition: all 0.5;
+}
+.createpodcast:hover,.playbutton:hover{
+  opacity: 1;
+}
+input[type="range"] {
+  /* Set the background color of the range thumb */
+  background-color:red;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  /* Set the background color of the range track */
+  /* background-color: red; */
+  background: linear-gradient(178deg, rgba(58, 129, 191, 0.30) 1.63%, rgba(65, 48, 90, 0.01) 148.18%);
+  border-radius: 50%;
+}
