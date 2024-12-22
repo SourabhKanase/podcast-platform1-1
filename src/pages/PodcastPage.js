@@ -4,9 +4,9 @@ import Podcasts from '../components/Podcasts';
 
 const PodcastPage = () => {
   return (
-    <div>
+    <div >
          <Header/>
-          <center><h1 style={{color:"white"}}>Discover Podcast</h1></center>
+           <center><h1 style={{color:"white"}}>Discover Podcast</h1></center>
           <Podcasts/>
     </div>
   )

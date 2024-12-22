@@ -16,12 +16,13 @@ import PodcastPage from "./pages/PodcastPage";
 import PodcastdetailPage from "./pages/PodcastdetailPage";
 import CreateAnEpisode from "./pages/CreateAnEpisode";
 
-
 function App() {
 
   let dispatch=useDispatch();
   let user=useSelector((data)=>data);
 
+    let var1="dc_2";
+    localStorage.setItem("var",var1);
 
   useEffect(()=>{
       const unsubscribeAuth= onAuthStateChanged(auth,(user)=>{

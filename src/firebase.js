@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getMessaging, getToken, onMessage } from "firebase/messaging";
 import {getFirestore} from "firebase/firestore";
 import {getStorage} from "firebase/storage";
 import {getAuth} from "firebase/auth";
@@ -27,4 +27,7 @@ const db=getFirestore(app);
 const storage=getStorage(app);
 const auth= getAuth(app);
 
-export {auth,db,storage};
+const messaging = getMessaging(app);
+
+export { auth,db,storage,messaging, getToken, onMessage };
+// export {auth,db,storage};
