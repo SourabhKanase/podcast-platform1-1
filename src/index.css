@@ -1,29 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 body {
   margin: 0;
-  font-family:"Inter";
+  font-family: "Inter";
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #20062e;
 }
 
-input{
-  font-family: "Inter",sans-serif;
+input {
+  font-family: "Inter", sans-serif;
 }
 
-:root{
-  --white:#fff;
-  --blue:#18b2de;
-  --theme:#20062e;
-  --grey:#d7d7d7;
-  --purplegrey:#8f8297;
-
+:root {
+  --white: #fff;
+  --blue: #18b2de;
+  --theme: #20062e;
+  --grey: #d7d7d7;
+  --purplegrey: #8f8297;
 }
-.Navbar{
+.Navbar {
   /* width: 60% !important; */
   display: flex;
   align-items: center;
@@ -31,31 +28,31 @@ input{
   margin: auto;
   padding: 1.5rem;
 }
-.Navbar>a{
-  display: flex; 
-  gap:1rem !important;
+.Navbar > a {
+  display: flex;
+  gap: 1rem !important;
   margin-right: 1rem;
   text-decoration: none;
   color: var(--purplegrey);
 }
-.Navbar>a:hover{
+.Navbar > a:hover {
   color: #fff;
 }
-.Shadow{
-   width: 50%;
-   display: flex;
-   margin: auto;
-   height: 100px;
-   position: absolute;
-   background-color: #18b2de;
-   filter: blur(100px);
-   top: -100x;
-   z-index: -1;
+.Shadow {
+  width: 50%;
+  display: flex;
+  margin: auto;
+  height: 100px;
+  position: absolute;
+  background-color: #18b2de;
+  filter: blur(100px);
+  top: -100x;
+  z-index: -1;
 }
-.active{
+.active {
   color: white !important;
 }
-.SignUpFrom{
+.SignUpFrom {
   width: 70vw;
   margin: auto;
   display: flex;
@@ -63,32 +60,35 @@ input{
   align-items: center;
   justify-content: center;
 }
-.signupdiv{
-
+.signupdiv {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
-.SignUpFrom>input,.loginform>input,.podcastform>input,.custom-input,.forinput>input,.createanepisode>input{
+.SignUpFrom > input,
+.loginform > input,
+.podcastform > input,
+.custom-input,
+.forinput > input,
+.createanepisode > input {
   width: 100%;
   margin: 1rem;
   padding: 1rem;
   background-color: #20062e;
-  color:white;
+  color: white;
   border: none;
   border: 1px solid #ccc;
   border-radius: 10px;
 }
-.signupdiv>p{
+.signupdiv > p {
   color: var(--purplegrey);
   cursor: pointer;
 }
-.signupdiv>p:hover{
-  color:#fff;
+.signupdiv > p:hover {
+  color: #fff;
 }
-.loginform{
+.loginform {
   width: 70vw;
   margin: auto;
   display: flex;
@@ -96,7 +96,7 @@ input{
   align-items: center;
   justify-content: center;
 }
-.loginform>input{
+.loginform > input {
   width: 100%;
   margin: 1rem;
   padding: 1rem;
@@ -105,9 +105,9 @@ input{
   border: 1px solid #ccc;
   border-radius: 10px;
 }
-.loginform>button{
-  width:103%;
-  margin:1rem;
+.loginform > button {
+  width: 103%;
+  margin: 1rem;
   padding: 1rem;
   border-radius: 10px;
   background-color: var(--theme);
@@ -115,13 +115,13 @@ input{
   border: none;
   border: 1px solid #ccc;
 }
-.loginform>button:hover{
+.loginform > button:hover {
   background-color: var(--white);
-  color:var(--theme);
+  color: var(--theme);
 }
-.SignUpFrom>button{
-  width:103%;
-  margin:1rem;
+.SignUpFrom > button {
+  width: 103%;
+  margin: 1rem;
   padding: 1rem;
   border-radius: 10px;
   background-color: var(--theme);
@@ -129,9 +129,10 @@ input{
   border: none;
   border: 1px solid #ccc;
 }
-.podcastform>button,.createanepisode>button{
-  width:103%;
-  margin:1rem;
+.podcastform > button,
+.createanepisode > button {
+  width: 103%;
+  margin: 1rem;
   padding: 1rem;
   border-radius: 10px;
   background-color: var(--theme);
@@ -139,75 +140,79 @@ input{
   border: none;
   border: 1px solid #ccc;
 }
-.SignUpFrom>button:hover,.podcastform>button:hover,.createanepisode>button:hover{
+.SignUpFrom > button:hover,
+.podcastform > button:hover,
+.createanepisode > button:hover {
   background-color: var(--white);
-  color:var(--theme);
+  color: var(--theme);
 }
-h1{
+h1 {
   font-weight: 200;
 }
-.activeinput{
+.activeinput {
   color: var(--purplegrey);
 }
-.podcastform{
-   /* width:80%;
+.podcastform {
+  /* width:80%;
    margin:auto; */
-   margin-left: 200px;
-   margin-right: 260px;
-} 
-
-.Poadcastdiv{
-  display: flex;
-  width: 80%;
-  gap:2rem;
-
+  margin-left: 200px;
+  margin-right: 260px;
 }
-.podcastcard{
-  width: 320px;
-  height: 400px;
-  flex-shrink: 0;
+
+.Poadcastdiv {
+  display: flex;
+  width:100%;
+}
+.podcastcard {
+  width: 260px;
+  height: 320px;
+  margin-right: 10px;
   border-radius: 20px;
-  background: linear-gradient(178deg, rgba(58, 129, 191, 0.30) 1.63%, rgba(65, 48, 90, 0.01) 148.18%);
+  background: linear-gradient(
+    178deg,
+    rgba(58, 129, 191, 0.3) 1.63%,
+    rgba(65, 48, 90, 0.01) 148.18%
+  );
   padding: 15px;
 }
-.podcastcard>img{
-  width: 315px;
-  height: 349px;
+.podcastcard > img {
+  width: 250px;
+  height: 290px;
   flex-shrink: 0;
   border-radius: 15px 15px 0px 0px;
 }
 
-a{
+a {
   text-decoration: none !important;
-  color:white
+  color: white;
 }
-.forinput{
+.forinput {
   width: 80%;
   margin: auto;
 }
-.podcastdetailsdiv{
+.podcastdetailsdiv {
   width: 80%;
   margin: auto;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.podcastdetailsdiv{
+.podcastdetailsdiv {
   color: #ccc;
 }
-.bannerImage{
+.bannerImage {
   width: 100%;
   height: 300px;
 }
-.createanepisode{
+.createanepisode {
   width: 80%;
   margin: auto;
   margin-right: 200px;
 }
-ol{
-  color:white
+ol {
+  color: white;
 }
-.Custom-audio-palyer{
+.Custom-audio-palyer {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -217,28 +222,33 @@ ol{
   justify-content: center;
   align-items: center;
   background-color: black;
-  gap:1.5rem
+  gap: 1.5rem;
 }
-.custom-display-image{
-  width:50px;
+.custom-display-image {
+  width: 50px;
   height: 50px;
   object-fit: cover;
   z-index: 1;
 }
 
-.durationflex{
+.durationflex {
   display: flex;
   align-items: center;
-  gap:0.5rem;
-  width:40%;
+  gap: 0.5rem;
+  width: 40%;
 }
-.inputRange{
+.inputRange {
   width: 100%;
 }
-.createpodcast,.playbutton{
+.createpodcast,
+.playbutton {
   /* background-color: #18b2de;
   filter: blur(100px); */
-  background: linear-gradient(178deg, rgba(58, 129, 191, 0.30) 1.63%, rgba(65, 48, 90, 0.01) 148.18%);
+  background: linear-gradient(
+    178deg,
+    rgba(58, 129, 191, 0.3) 1.63%,
+    rgba(65, 48, 90, 0.01) 148.18%
+  );
   padding: 10px;
   border: none;
   border-radius: 4px;
@@ -246,16 +256,29 @@ ol{
   opacity: 0.7;
   transition: all 0.5;
 }
-.createpodcast:hover,.playbutton:hover{
+.createpodcast:hover,
+.playbutton:hover {
   opacity: 1;
 }
 input[type="range"] {
   /* Set the background color of the range thumb */
-  background-color:red;
+  background-color: red;
 }
 input[type="range"]::-webkit-slider-runnable-track {
   /* Set the background color of the range track */
   /* background-color: red; */
-  background: linear-gradient(178deg, rgba(58, 129, 191, 0.30) 1.63%, rgba(65, 48, 90, 0.01) 148.18%);
+  background: linear-gradient(
+    178deg,
+    rgba(58, 129, 191, 0.3) 1.63%,
+    rgba(65, 48, 90, 0.01) 148.18%
+  );
   border-radius: 50%;
 }
+.Poadcastdiv{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* cards display page */
+

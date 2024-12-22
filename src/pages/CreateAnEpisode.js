@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Header from '../components/Header';
 import CustomeFileInput from "../components/CustomeFileInput"
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { auth, db, storage } from '../firebase';
@@ -13,6 +13,7 @@ const CreateAnEpisode = () => {
   let [desc,setDesc]=useState("");
   let [audio,setAudio]=useState();
   let [loading,setloading]=useState(false);
+  let navigate=useNavigate();
   const {id}=useParams();
   console.log(id);
   async function handleSubmit()
@@ -31,8 +32,10 @@ const CreateAnEpisode = () => {
         
         await addDoc(collection(db,"podcasts",id,"episodes"),{title:title,description:desc,audioUrl:audioUrl});
         setloading(false);
+        toast.success("Episode Created");
+        navigate("/podcast");
 
-
+    
       }catch(e)
       {
         setloading(false);
